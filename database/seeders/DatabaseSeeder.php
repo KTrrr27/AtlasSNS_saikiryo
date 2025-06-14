@@ -20,5 +20,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        //$this->call()　run()の中で記述するとseederを実行してデータベースにデータを挿入する
+        $this->call([
+            //UsersTableSeederのクラスrun()が実行される
+            UsersTableSeeder::class,
+        ]);
     }
 }
