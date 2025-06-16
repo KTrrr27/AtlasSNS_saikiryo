@@ -55,7 +55,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('added');
+        // return redirect('added');
+        return redirect('added')->with('username', $request->username);
     }
 
     public function added(): View
