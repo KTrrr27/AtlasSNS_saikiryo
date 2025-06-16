@@ -19,12 +19,17 @@ use Illuminate\Support\Facades\Route;
 
 
 require __DIR__ . '/auth.php';
+//groupの中はmiddlewareで（auth：認証）されているものだけ
+//認証されていない場合はloginと名前の付いている場所へ移動
+//function()：無名関数：クロージャ：その場だけで使う関数
+Route::middleware('auth')->group(function () {
 
-Route::get('top', [PostsController::class, 'index']);
+  Route::get('top', [PostsController::class, 'index']);
 
-Route::get('profile', [ProfileController::class, 'profile']);
+  Route::get('profile', [ProfileController::class, 'profile']);
 
-Route::get('search', [UsersController::class, 'index']);
+  Route::get('search', [UsersController::class, 'index']);
 
-Route::get('follow-list', [PostsController::class, 'index']);
-Route::get('follower-list', [PostsController::class, 'index']);
+  Route::get('follow-list', [PostsController::class, 'index']);
+  Route::get('follower-list', [PostsController::class, 'index']);
+});
