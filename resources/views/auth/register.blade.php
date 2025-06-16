@@ -1,6 +1,7 @@
 <x-logout-layout>
     <!-- 適切なURLを入力してください -->
-    {!! Form::open(['url' => '/added']) !!}
+    <!-- ユーザー登録機能が書いてる[RegisteredUserController]の[store]に送るために形式はPOSTで -->
+    {!! Form::open(['url' => '/register','method'=>'POST']) !!}
 
     <h2>新規ユーザー登録</h2>
 
