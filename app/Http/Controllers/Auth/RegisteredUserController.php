@@ -56,6 +56,8 @@ class RegisteredUserController extends Controller
         ]);
 
         // return redirect('added');
+        //redirect()->with()でページを渡すときに一緒に値も渡す
+        //usernameという名前の箱に「$request->username」の値をsessionと一緒に持っていく
         return redirect('added')->with('username', $request->username);
     }
 
