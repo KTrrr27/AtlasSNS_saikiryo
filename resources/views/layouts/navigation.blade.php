@@ -1,5 +1,6 @@
         <div id="head">
-            <h1><a><img src="images/atlas.png"></a></h1>
+            <!-- nameのtop(home)を探すように指定する -->
+            <h1><a href="{{ route('top') }}"><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
                     <p>〇〇さん</p>

@@ -12,10 +12,12 @@
     {{ Form::email('email',null,['class' => 'input']) }}
 
     {{ Form::label('パスワード') }}
-    {{ Form::text('password',null,['class' => 'input']) }}
+    <!-- パスワードを伏字にするtext→password -->
+    {{ Form::password('password',null,['class' => 'input']) }}
 
     {{ Form::label('パスワード確認') }}
-    {{ Form::text('password_confirmation',null,['class' => 'input']) }}
+    <!-- パスワードを伏字にするtext→password -->
+    {{ Form::password('password_confirmation',null,['class' => 'input']) }}
 
     {{ Form::submit('登録') }}
 

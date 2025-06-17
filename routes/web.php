@@ -24,7 +24,8 @@ require __DIR__ . '/auth.php';
 //function()：無名関数：クロージャ：その場だけで使う関数
 Route::middleware('auth')->group(function () {
 
-  Route::get('top', [PostsController::class, 'index']);
+  // nameで一致させられるようにnameを付けてあげる
+  Route::get('top', [PostsController::class, 'index'])->name('top');
 
   Route::get('profile', [ProfileController::class, 'profile']);
 
