@@ -1,22 +1,44 @@
 @charset "utf-8";
-html{
-}
-body{
-}
+
+html {}
+
+body {}
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #186AC9;
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+}
+
+.arrow {
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* 開いたときに矢印回転 */
+#arrow {
+    display: inline-block;
+}
+
+#arrow.rotated {
+    transform: rotate(180deg);
+}
+
+/* 強制的にアニメーションは無し */
+.collapsing {
+    transition: none !important;
 }
