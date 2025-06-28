@@ -1,4 +1,6 @@
 <?php
+// ログアウトのために追加↓
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
@@ -33,4 +35,7 @@ Route::middleware('auth')->group(function () {
 
   Route::get('follow-list', [PostsController::class, 'index']);
   Route::get('follower-list', [PostsController::class, 'index']);
+
+  // ログアウト機能
+  Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });

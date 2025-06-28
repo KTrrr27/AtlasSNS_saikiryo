@@ -13,9 +13,14 @@
                     </p>
                 </div>
                 <ul id="menuContent" class="collapse">
-                    <li><a href="">ホーム</a></li>
-                    <li><a href="">プロフィール</a></li>
-                    <li><a href="">ログアウト</a></li>
+                    <li><a href="{{ route('top') }}">ホーム</a></li>
+                    <li><a href="/profile">プロフィール</a></li>
+                    <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
+                        <!-- ログアウトボタンを押したら見えないformにPOSTで送信されて、ルート名logoutをさがす -->
+                        <form id="logout-form" action="{{route ('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
