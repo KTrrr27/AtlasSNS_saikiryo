@@ -42,3 +42,7 @@ header {
 .collapsing {
     transition: none !important;
 }
+
+body {
+    margin: 0 auto;
+}
