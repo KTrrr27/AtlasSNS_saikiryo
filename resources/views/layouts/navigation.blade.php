@@ -3,7 +3,7 @@
             <h1><a href="{{ route('top') }}"><img src="images/atlas.png"></a></h1>
             <div id="accordionMenu">
                 <div id="accordionButton">
-                    <p>〇〇さん
+                    <p>{{ Auth::user()->username }}さん
                         <span id="arrow"
                             data-bs-toggle="collapse"
                             data-bs-target="#menuContent"
