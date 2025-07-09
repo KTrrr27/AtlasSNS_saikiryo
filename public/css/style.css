@@ -46,3 +46,36 @@ header {
 body {
     margin: 0 auto;
 }
+
+
+/* login side-menu */
+#confirm {
+    padding: 20px;
+    border-bottom: 1px solid #727272;
+}
+
+.side_count {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn a {
+    display: block;
+    color: #fff;
+    background-color: #186AC9;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: 150px;
+}
+
+.btn_right {
+    display: grid;
+    justify-content: flex-end;
+}
+
+.btn_center {
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+}
