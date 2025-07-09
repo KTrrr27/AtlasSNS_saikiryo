@@ -1,6 +1,8 @@
 <?php
 // ログアウトのために追加↓
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+//フォローフォロワー画面遷移
+use App\Http\Controllers\FollowsController;
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
@@ -31,11 +33,16 @@ Route::middleware('auth')->group(function () {
 
   Route::get('profile', [ProfileController::class, 'profile']);
 
-  Route::get('search', [UsersController::class, 'index']);
+  // Route::get('search', [UsersController::class, 'index']);
+  Route::get('search', [UsersController::class, 'search']);
 
   Route::get('follow-list', [PostsController::class, 'index']);
   Route::get('follower-list', [PostsController::class, 'index']);
 
   // ログアウト機能
   Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+  // フォローフォロワー画面
+  Route::get('follow-list', [FollowsController::class, 'followList']);
+  Route::get('follower-list', [FollowsController::class, 'followerList']);
 });
