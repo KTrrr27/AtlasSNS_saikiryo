@@ -14,7 +14,7 @@
                 </div>
                 <ul id="menuContent" class="collapse">
                     <li><a href="{{ route('top') }}">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
+                    <li class="menuContent_li"><a href="/profile">プロフィール</a></li>
                     <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
                         <!-- ログアウトボタンを押したら見えないformにPOSTで送信されて、ルート名logoutをさがす -->
                         <form id="logout-form" action="{{route ('logout') }}" method="POST" style="display: none;">
@@ -22,5 +22,6 @@
                         </form>
                     </li>
                 </ul>
+                <img src="images/icon1.png" alt="" class="icon">
             </div>
         </div>

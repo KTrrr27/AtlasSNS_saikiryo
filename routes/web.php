@@ -31,13 +31,16 @@ Route::middleware('auth')->group(function () {
   // nameで一致させられるようにnameを付けてあげる
   Route::get('top', [PostsController::class, 'index'])->name('top');
 
+  Route::post('post', [PostsController::class, 'store'])->name('post');
+
+
   Route::get('profile', [ProfileController::class, 'profile']);
 
   // Route::get('search', [UsersController::class, 'index']);
   Route::get('search', [UsersController::class, 'search']);
 
-  Route::get('follow-list', [PostsController::class, 'index']);
-  Route::get('follower-list', [PostsController::class, 'index']);
+  // Route::get('follow-list', [PostsController::class, 'index']);
+  // Route::get('follower-list', [PostsController::class, 'index']);
 
   // ログアウト機能
   Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');

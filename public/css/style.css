@@ -82,3 +82,92 @@ body {
     text-align: center;
     width: fit-content;
 }
+
+/* //navigation// */
+#head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#head img {
+    width: 100px;
+}
+
+#head h1 {
+    margin: 0;
+    padding: 20px;
+}
+
+#head p {
+    margin: 0;
+    color: #fff;
+}
+
+#menuContent {
+    padding: 0;
+    position: absolute;
+    top: 81px;
+    right: 0;
+    width: 20%;
+    background-color: #fff;
+    z-index: 100;
+    border-left: 1px solid #727272;
+    text-align: center;
+}
+
+#menuContent a {
+    text-decoration: none;
+    color: #909090;
+    border: solid #00297e 1px;
+    display: block;
+    padding: 20px;
+}
+
+.menuContent_li {
+    color: #fff;
+    background-color: #00297e;
+}
+
+#menuContent_li a {
+    color: #eff1f7;
+}
+
+#accordionMenu {
+    display: flex;
+    align-items: center;
+}
+
+#accordionMenu img {
+    width: 50px;
+    margin: 0 30px;
+}
+
+
+
+/* Post画面 */
+.post_area {
+    display: flex;
+    border-bottom: #e0e0e0 10px solid;
+    padding: 50px;
+}
+
+.post_form {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+textarea.form-control {
+    height: 100px;
+    width: 80%;
+    border: none;
+    box-shadow: none;
+    resize: none;
+}
+
+.post_icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 30px;
+}
