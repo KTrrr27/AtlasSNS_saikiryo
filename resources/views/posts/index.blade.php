@@ -1,7 +1,7 @@
 <x-login-layout>
 
   <div class="post_area">
-    <img src="images/icon1.png" alt="" class="post_icon">
+    <img src="{{ 'images/' . Auth::user()->icon_image }}" alt="ユーザーアイコン" class="user_icon">
     {{ Form::open(['url' => '/post', 'method'=>'post', 'class' =>'post_form']) }}
     {{ Form::textarea('post',null,[
       'required',

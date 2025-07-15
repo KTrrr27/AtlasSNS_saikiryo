@@ -22,6 +22,6 @@
                         </form>
                     </li>
                 </ul>
-                <img src="images/icon1.png" alt="" class="icon">
+                <img src="{{ 'images/' . Auth::user()->icon_image }}" alt="ユーザーアイコン" class="user_icon">
             </div>
         </div>

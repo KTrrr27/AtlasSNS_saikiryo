@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
   // nameで一致させられるようにnameを付けてあげる
   Route::get('top', [PostsController::class, 'index'])->name('top');
 
+  //postを保存する
   Route::post('post', [PostsController::class, 'store'])->name('post');
 
 

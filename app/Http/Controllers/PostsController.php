@@ -13,6 +13,8 @@ class PostsController extends Controller
         return view('posts.index');
     }
 
+    // バリデーションチェックして認証済みのuser_idに紐づけて保存する
+    //画面をtopに戻す
     public function store(Request $request)
     {
         // バリデーション

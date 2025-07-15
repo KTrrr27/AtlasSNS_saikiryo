@@ -139,6 +139,7 @@ body {
 }
 
 #accordionMenu img {
+    height: 50px;
     width: 50px;
     margin: 0 30px;
 }
@@ -166,8 +167,8 @@ textarea.form-control {
     resize: none;
 }
 
+.user_icon,
 .post_icon {
     width: 50px;
     height: 50px;
-    margin: 0 30px;
 }
