@@ -35,6 +35,11 @@ Route::middleware('auth')->group(function () {
   Route::post('post', [PostsController::class, 'store'])->name('post');
 
 
+
+  //postの削除
+  Route::get('/post/{id}/delete', [PostsController::class, 'delete']);
+
+
   Route::get('profile', [ProfileController::class, 'profile']);
 
   // Route::get('search', [UsersController::class, 'index']);

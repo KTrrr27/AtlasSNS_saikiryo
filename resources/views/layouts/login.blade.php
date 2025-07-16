@@ -19,6 +19,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{asset('/js/script.js')}}"></script>
   <!--サイトのアイコン指定-->
   <link rel="icon" href="画像URL" sizes="16x16" type="image/png" />
   <link rel="icon" href="画像URL" sizes="32x32" type="image/png" />

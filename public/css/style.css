@@ -20,7 +20,7 @@ header {
 }
 
 #side-bar {
-    flex: 0 0 19%;
+    flex: 0 0 20%;
     border-left: 1px solid #727272;
 }
 
@@ -107,7 +107,7 @@ body {
 #menuContent {
     padding: 0;
     position: absolute;
-    top: 81px;
+    top: 80px;
     right: 0;
     width: 20%;
     background-color: #fff;
@@ -121,7 +121,7 @@ body {
     color: #909090;
     border: solid #00297e 1px;
     display: block;
-    padding: 20px;
+    padding: 30px 0;
 }
 
 .menuContent_li {
@@ -171,4 +171,35 @@ textarea.form-control {
 .post_icon {
     width: 50px;
     height: 50px;
+    margin-right: 10px;
+}
+
+ul {
+    display: flex;
+    padding: 30px;
+    padding-left: 10%;
+    justify-content: space-between;
+    border-bottom: solid #e0e0e0 2px;
+}
+
+.post_left {
+    display: flex;
+}
+
+.trash_box {
+    position: relative;
+}
+
+.trash {
+    position: absolute;
+}
+
+.trash_hover {
+    position: absolute;
+    opacity: 0;
+}
+
+.trash_hover:hover {
+    opacity: 1;
+    z-index: 100;
 }
