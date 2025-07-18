@@ -30,7 +30,7 @@
       <p>{{ $post->created_at }}</p>
       <!-- postのidと認証済みのidが一致したら -->
       @if ($post->user_id == auth()->id())
-      <a href="">
+      <a class="js_modal_open" post="{{ $post->post }}" post-id="{{ $post->id }}">
         <input type="image" src="images/edit.png" class="post_icon" alt="編集ボタン">
       </a>
       <a href="/post/{{ $post->id }}/delete" class="trash_box" onclick="return confirm('この投稿を削除します。よろしいでしょうか？')">
@@ -41,4 +41,15 @@
     </li>
   </ul>
   @endforeach
+  <div class="modal js_modal">
+    <div class="modal_bg js_modal_close"></div>
+    <div class="modal_content">
+      <form class="modal_form" action="">
+        <textarea name="post" id="modal_post" class="modal_post"></textarea>
+        <input type="hidden" class="modal_id" value="">
+        <input type="image" src="images/edit.png" class="modal_icon" alt="編集ボタン">
+        {{ csrf_field() }}
+      </form>
+    </div>
+  </div>
 </x-login-layout>
