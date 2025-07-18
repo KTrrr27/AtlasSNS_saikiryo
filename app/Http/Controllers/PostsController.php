@@ -47,4 +47,21 @@ class PostsController extends Controller
         Post::where('id', $id)->delete();
         return redirect()->route('top');
     }
+
+    // 更新
+    public function update(Request $request)
+    {
+        // バリデーション
+        $validated = $request->validate([
+            'post' => 'required|max:150',
+        ]);
+        // inputで送られてきたnameを探す
+        $id = $request->input('post-id');
+        $up_post = $request->input('post');
+
+        Post::where('id', $id)->update([
+            'post' => $up_post
+        ]);
+        return redirect()->route('top');
+    }
 }

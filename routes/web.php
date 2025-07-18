@@ -34,7 +34,8 @@ Route::middleware('auth')->group(function () {
   //postを保存する
   Route::post('post', [PostsController::class, 'store'])->name('post');
 
-
+  // update
+  Route::get('/post/update', [PostsController::class, 'update']);
 
   //postの削除
   Route::get('/post/{id}/delete', [PostsController::class, 'delete']);

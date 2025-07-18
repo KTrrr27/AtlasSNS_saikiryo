@@ -44,9 +44,9 @@
   <div class="modal js_modal">
     <div class="modal_bg js_modal_close"></div>
     <div class="modal_content">
-      <form class="modal_form" action="">
+      <form class="modal_form" action="/post/update">
         <textarea name="post" id="modal_post" class="modal_post"></textarea>
-        <input type="hidden" class="modal_id" value="">
+        <input type="hidden" class="modal_id" name="post-id" value="">
         <input type="image" src="images/edit.png" class="modal_icon" alt="編集ボタン">
         {{ csrf_field() }}
       </form>
