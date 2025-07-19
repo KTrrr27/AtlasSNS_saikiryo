@@ -184,6 +184,7 @@ ul {
 
 /* 強制改行 */
 li p {
+    padding: 5px;
     word-break: break-all;
 }
 
