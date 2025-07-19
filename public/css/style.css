@@ -178,7 +178,7 @@ ul {
     display: flex;
     padding: 30px;
     padding-left: 10%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     border-bottom: solid #e0e0e0 2px;
 }
 
@@ -190,6 +190,12 @@ li p {
 
 .post_left {
     display: flex;
+    width: 85%;
+}
+
+.post_right {
+    text-align: center;
+    width: 15%;
 }
 
 .trash_box {

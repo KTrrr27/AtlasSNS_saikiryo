@@ -23,10 +23,11 @@
       <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
       <div>
         <p>{{ $post->user->username }}</p>
-        <p>{{ $post->post }}</p>
+        <!-- 改行 !! nl2br !! -->
+        <p>{!! nl2br( $post->post ) !!}</p>
       </div>
     </li>
-    <li>
+    <li class="post_right">
       <p>{{ $post->created_at }}</p>
       <!-- postのidと認証済みのidが一致したら -->
       @if ($post->user_id == auth()->id())
