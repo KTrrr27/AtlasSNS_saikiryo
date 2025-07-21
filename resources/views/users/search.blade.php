@@ -7,12 +7,16 @@
 
     </form>
     <div class="search_text">
-      <p>検索ワード：</p>
+      <!-- 検索keyword表示 または⁇ ''空 -->
+      <p>検索ワード：{{ $keyword ?? ''}}</p>
     </div>
   </div>
 
   <div class="search_list">
+    <!-- ユーザーの全て -->
     @foreach ($users as $user)
+    <!-- 条件に一致する場合はスキップ -->
+    @continue($user->id==auth()->id())
     <ul class="search_li search_tr">
       <div class="search_li search_left">
         <li><img src="{{ asset('images/' . $user->icon_image) }}" alt="ユーザーアイコン" class="user_icon"></li>
