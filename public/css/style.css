@@ -4,6 +4,10 @@ html {}
 
 body {}
 
+p {
+    margin: 0;
+}
+
 /* header */
 header {
     background: #186AC9;
@@ -50,7 +54,7 @@ body {
 
 /* login side-menu */
 #confirm {
-    padding: 20px;
+    padding: 15px;
     border-bottom: 1px solid #727272;
 }
 
@@ -60,13 +64,18 @@ body {
     justify-content: space-between;
 }
 
+.side_count p {
+    margin: 20px 0;
+}
+
 .btn a {
     display: block;
     color: #fff;
-    background-color: #186AC9;
-    border-radius: 5px;
-    padding: 10px 0;
-    width: 150px;
+    text-decoration: none;
+    /* background-color: #186AC9; */
+    /* border-radius: 5px; */
+    /* padding: 10px 0; */
+    width: 120px;
 }
 
 .btn_right {
@@ -147,10 +156,26 @@ body {
 
 
 /* Post画面 */
-.post_area {
+.area {
     display: flex;
     border-bottom: #e0e0e0 10px solid;
     padding: 50px;
+    width: 100%;
+    height: 200px;
+}
+
+.search_area {
+    display: flex;
+    align-items: center;
+}
+
+.search_area form,
+.search_text {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-size: 30px;
+    width: 50%;
 }
 
 .post_form {
@@ -168,13 +193,19 @@ textarea.form-control {
 }
 
 .user_icon,
-.post_icon {
+.post_icon,
+.search_icon {
     width: 50px;
     height: 50px;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
-ul {
+.user_btn {
+    display: flex;
+    width: 100%;
+}
+
+.post_ul {
     display: flex;
     padding: 30px;
     padding-left: 10%;
@@ -264,4 +295,16 @@ li p {
     height: 50px;
     width: 50px;
     margin-top: 20px;
+}
+
+/* 検索画面 */
+.search_list {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.search_li {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
 }

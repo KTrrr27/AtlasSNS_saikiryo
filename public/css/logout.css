@@ -82,17 +82,18 @@ input[type=submit] {
     color: #fff;
 }
 
+#clear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #clear a {
-    background-color: #ed3a50;
     text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
 }
 
 #clear .btn {
-    margin-top: 20px;
-    padding-left: 38px;
-    padding-right: 38px;
+    margin: 20px auto;
 }
 
 #clear p:nth-child(1) {

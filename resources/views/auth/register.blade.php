@@ -19,7 +19,7 @@
     <!-- パスワードを伏字にするtext→password -->
     {{ Form::password('password_confirmation',null,['class' => 'input']) }}
 
-    {{ Form::submit('登録') }}
+    {{ Form::submit('新規登録',['class' =>'btn btn-danger']) }}
 
     <p><a href="login">ログイン画面へ戻る</a></p>
 

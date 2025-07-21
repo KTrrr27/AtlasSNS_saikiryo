@@ -1,6 +1,6 @@
 <x-login-layout>
 
-  <div class="post_area">
+  <div class="post_area area">
     <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
     {{ Form::open(['url' => '/post', 'method'=>'post', 'class' =>'post_form']) }}
     {{ Form::textarea('post',null,[
@@ -18,7 +18,7 @@
   ・フォローしている人の投稿<br>
   ・日付と時刻の若い順に<br>
   @foreach ($posts as $post)
-  <ul>
+  <ul class="post_ul">
     <li class="post_left">
       <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
       <div>
@@ -31,13 +31,15 @@
       <p>{{ $post->created_at }}</p>
       <!-- postのidと認証済みのidが一致したら -->
       @if ($post->user_id == auth()->id())
-      <a class="js_modal_open" post="{{ $post->post }}" post-id="{{ $post->id }}">
-        <input type="image" src="images/edit.png" class="post_icon" alt="編集ボタン">
-      </a>
-      <a href="/post/{{ $post->id }}/delete" class="trash_box" onclick="return confirm('この投稿を削除します。よろしいでしょうか？')">
-        <input type="image" src="images/trash.png" class="post_icon trash" alt="削除ボタン">
-        <input type="image" src="images/trash-h.png" class="post_icon trash_hover" alt="削除ボタン">
-      </a>
+      <div class="user_btn">
+        <a class="js_modal_open" post="{{ $post->post }}" post-id="{{ $post->id }}">
+          <input type="image" src="images/edit.png" class="post_icon" alt="編集ボタン">
+        </a>
+        <a href="/post/{{ $post->id }}/delete" class="trash_box" onclick="return confirm('この投稿を削除します。よろしいでしょうか？')">
+          <input type="image" src="images/trash.png" class="post_icon trash" alt="削除ボタン">
+          <input type="image" src="images/trash-h.png" class="post_icon trash_hover" alt="削除ボタン">
+        </a>
+      </div>
       @endif
     </li>
   </ul>
