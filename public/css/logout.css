@@ -1,10 +1,115 @@
 @charset "UTF-8";
 
-html{
+html {
     height: 100%;
+    padding: 10% 0;
 }
 
-body{
-    height: 100%;
+body {
     background: #186AC9;
+    background-image: linear-gradient(0deg, #fde22f 0%, #186AC9 100%);
+}
+
+header {
+    margin: 0 auto;
+    width: 320px;
+    text-align: center;
+}
+
+header img {
+    width: 120px;
+}
+
+header p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+
+
+#container {
+    margin: 0 auto;
+    width: 240px;
+}
+
+#container p,
+#container a,
+#container form {
+    color: #fff;
+}
+
+#container p,
+#container a {
+    text-align: center;
+}
+
+#container h2 {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+}
+
+#container a {
+    text-decoration: underline;
+    font-size: 10px;
+}
+
+#container form,
+#clear {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 36px;
+    border-radius: 10px;
+}
+
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    border-radius: 5px;
+    margin: 0 auto;
+    color: black;
+}
+
+input[type=submit] {
+    display: block;
+    margin: 0 0 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #ed3a50;
+    border: 0;
+    color: #fff;
+}
+
+#clear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#clear a {
+    text-decoration: none;
+}
+
+#clear .btn {
+    margin: 20px auto;
+}
+
+#clear p:nth-child(1) {
+    font-size: 12px;
+    margin: 0;
+}
+
+#clear p:nth-child(2) {
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+#clear p:nth-child(3),
+#clear p:nth-child(4) {
+    font-weight: 300;
+    font-size: 10px;
+    margin: 0;
+    text-align: left;
 }

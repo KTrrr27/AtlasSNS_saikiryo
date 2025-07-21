@@ -1,26 +1,29 @@
 <x-logout-layout>
     <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '〇〇']) !!}
+    <!-- ユーザー登録機能が書いてる[RegisteredUserController]の[store]に送るために形式はPOSTで -->
+    {!! Form::open(['url' => '/register','method'=>'POST']) !!}
 
-<h2>新規ユーザー登録</h2>
+    <h2>新規ユーザー登録</h2>
 
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+    {{ Form::label('ユーザー名') }}
+    {{ Form::text('username',null,['class' => 'input']) }}
 
-{{ Form::label('メールアドレス') }}
-{{ Form::email('email',null,['class' => 'input']) }}
+    {{ Form::label('メールアドレス') }}
+    {{ Form::email('email',null,['class' => 'input']) }}
 
-{{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+    {{ Form::label('パスワード') }}
+    <!-- パスワードを伏字にするtext→password -->
+    {{ Form::password('password',null,['class' => 'input']) }}
 
-{{ Form::label('パスワード確認') }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
+    {{ Form::label('パスワード確認') }}
+    <!-- パスワードを伏字にするtext→password -->
+    {{ Form::password('password_confirmation',null,['class' => 'input']) }}
 
-{{ Form::submit('登録') }}
+    {{ Form::submit('新規登録',['class' =>'btn btn-danger']) }}
 
-<p><a href="login">ログイン画面へ戻る</a></p>
+    <p><a href="login">ログイン画面へ戻る</a></p>
 
-{!! Form::close() !!}
+    {!! Form::close() !!}
 
 
 </x-logout-layout>

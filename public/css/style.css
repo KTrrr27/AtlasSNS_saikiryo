@@ -1,22 +1,310 @@
 @charset "utf-8";
-html{
+
+html {}
+
+body {}
+
+p {
+    margin: 0;
 }
-body{
-}
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #186AC9;
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
-    flex: 0 0 19%;
+
+#side-bar {
+    flex: 0 0 20%;
     border-left: 1px solid #727272;
+}
+
+.arrow {
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* 開いたときに矢印回転 */
+#arrow {
+    display: inline-block;
+}
+
+#arrow.rotated {
+    transform: rotate(180deg);
+}
+
+/* 強制的にアニメーションは無し */
+.collapsing {
+    transition: none !important;
+}
+
+body {
+    margin: 0 auto;
+}
+
+
+/* login side-menu */
+#confirm {
+    padding: 15px;
+    border-bottom: 1px solid #727272;
+}
+
+.side_count {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.side_count p {
+    margin: 20px 0;
+}
+
+.btn a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    /* background-color: #186AC9; */
+    /* border-radius: 5px; */
+    /* padding: 10px 0; */
+    width: 120px;
+}
+
+.btn_right {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+}
+
+.btn_center {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    width: fit-content;
+}
+
+/* //navigation// */
+#head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#head img {
+    width: 100px;
+}
+
+#head h1 {
+    margin: 0;
+    padding: 20px;
+}
+
+#head p {
+    margin: 0;
+    color: #fff;
+}
+
+#menuContent {
+    padding: 0;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 20%;
+    background-color: #fff;
+    z-index: 100;
+    border-left: 1px solid #727272;
+    text-align: center;
+}
+
+#menuContent a {
+    text-decoration: none;
+    color: #909090;
+    border: solid #00297e 1px;
+    display: block;
+    padding: 30px 0;
+}
+
+.menuContent_li {
+    color: #fff;
+    background-color: #00297e;
+}
+
+#menuContent_li a {
+    color: #eff1f7;
+}
+
+#accordionMenu {
+    display: flex;
+    align-items: center;
+}
+
+#accordionMenu img {
+    height: 50px;
+    width: 50px;
+    margin: 0 30px;
+}
+
+
+
+/* Post画面 */
+.area {
+    display: flex;
+    border-bottom: #e0e0e0 10px solid;
+    padding: 50px;
+    width: 100%;
+    height: 200px;
+}
+
+.search_area {
+    display: flex;
+    align-items: center;
+}
+
+.search_area form,
+.search_text {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-size: 30px;
+    width: 50%;
+}
+
+.post_form {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+textarea.form-control {
+    height: 100px;
+    width: 80%;
+    border: none;
+    box-shadow: none;
+    resize: none;
+}
+
+.user_icon,
+.post_icon,
+.search_icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.user_btn {
+    display: flex;
+    width: 100%;
+}
+
+.post_ul {
+    display: flex;
+    padding: 30px;
+    padding-left: 10%;
+    /* justify-content: space-between; */
+    border-bottom: solid #e0e0e0 2px;
+}
+
+/* 強制改行 */
+li p {
+    padding: 5px;
+    word-break: break-all;
+}
+
+.post_left {
+    display: flex;
+    width: 85%;
+}
+
+.post_right {
+    text-align: center;
+    width: 15%;
+}
+
+.trash_box {
+    position: relative;
+}
+
+.trash {
+    position: absolute;
+}
+
+.trash_hover {
+    position: absolute;
+    opacity: 0;
+}
+
+.trash_hover:hover {
+    opacity: 1;
+    z-index: 100;
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.modal_bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+.modal_content {
+    border-radius: 10px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#modal_post {
+    width: 100%;
+    height: 150px;
+    resize: none;
+}
+
+.modal_icon {
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
+}
+
+/* 検索画面 */
+.search_list {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.search_li {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
 }
