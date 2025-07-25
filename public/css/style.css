@@ -320,3 +320,26 @@ li p {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* フォローリスト */
+.list_icon {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+}
+
+.list-title {
+    font-size: 24px;
+    margin: 5px 30px;
+}
+
+.follow-list {
+    display: flex;
+}
+
+.follow-list ul {
+    display: flex;
+    padding: 0;
+    width: 600px;
+    flex-wrap: wrap;
+}
