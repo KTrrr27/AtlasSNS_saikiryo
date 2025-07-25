@@ -48,8 +48,11 @@ Route::middleware('auth')->group(function () {
 
   Route::post('search', [UsersController::class, 'search']);
 
-  // Route::get('follow-list', [PostsController::class, 'index']);
-  // Route::get('follower-list', [PostsController::class, 'index']);
+  // フォロー機能
+  //routeで記述した際はname必須
+  Route::post('users/{user}/follow', [UsersController::class, 'follow'])->name('users/follow');
+  // フォロー解除機能
+  Route::post('users/{user}/unfollow', [UsersController::class, 'unfollow'])->name('users/unfollow');
 
   // ログアウト機能
   Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
