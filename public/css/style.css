@@ -308,3 +308,15 @@ li p {
     align-items: center;
     margin: 20px auto;
 }
+
+.search_right {
+    position: relative;
+}
+
+.follow,
+.Unfollow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

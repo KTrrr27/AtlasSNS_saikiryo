@@ -23,8 +23,23 @@
         <li>{{ $user->username }}</li>
       </div>
       <div class="search_li search_right">
-        <li><a href="" class="btn btn-primary">フォローする</a> </li>
-        <li><a href="" class="btn btn-danger">フォロー解除</a> </li>
+        <!-- もし認証ユーザーのfollowings()の中にidがcontains含まれていなかったら -->
+        @if (!Auth::user()->followings->contains($user->id))
+        <li>
+          <!-- routeでかく -->
+          <form action="{{route('users/follow',$user)}}" method="post">
+            @csrf
+            <button type="submit" class="btn btn-primary follow">フォローする</button>
+          </form>
+        </li>
+        @else
+        <li>
+          <form action="{{route('users/unfollow',$user)}}" method="post">
+            @csrf
+            <button type="submit" class="btn btn-danger Unfollow">フォロー解除</button>
+          </form>
+        </li>
+        @endif
       </div>
     </ul>
     @endforeach
