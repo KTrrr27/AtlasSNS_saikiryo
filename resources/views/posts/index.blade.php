@@ -13,10 +13,7 @@
   </div>
 
 
-  投稿画面の下に一覧表示<br>
-  ・自分の投稿と<br>
-  ・フォローしている人の投稿<br>
-  ・日付と時刻の若い順に<br>
+
   @foreach ($posts as $post)
   <ul class="post_ul">
     <li class="post_left">

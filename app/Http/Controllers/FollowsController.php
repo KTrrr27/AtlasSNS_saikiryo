@@ -40,4 +40,5 @@ class FollowsController extends Controller
             ->get();
         return view('follows.followerList', ['followerIDs' => $followerIDs, 'posts' => $posts]);
     }
+    public function profile() {}
 }
