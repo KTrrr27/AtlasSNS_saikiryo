@@ -60,4 +60,6 @@ Route::middleware('auth')->group(function () {
   // フォローフォロワー画面
   Route::get('follow-list', [FollowsController::class, 'followList']);
   Route::get('follower-list', [FollowsController::class, 'followerList']);
+  // profile画面
+  Route::post('profile', [ProfileController::class, 'profile'])->name('profile');
 });
