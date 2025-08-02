@@ -62,4 +62,5 @@ Route::middleware('auth')->group(function () {
   Route::get('follower-list', [FollowsController::class, 'followerList']);
   // profile画面
   Route::post('profile', [ProfileController::class, 'profile'])->name('profile');
+  Route::get('profile', [ProfileController::class, 'getProfile'])->name('profile.get');
 });
