@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Follow;
 use Illuminate\Http\Request;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Follow;
+use App\Models\User;
+use App\Models\Post;
+
 
 class UsersController extends Controller
 {
@@ -30,18 +32,31 @@ class UsersController extends Controller
         );
     }
     // フォロー機能
-    public function follow(User $user)
+    public function follow(User $user, Request $request)
     {
         Follow::firstOrCreate([
             'following_id' => Auth::id(),
             'followed_id' => $user->id,
         ]);
-        return back();
+        // プロフィール画面から遷移してきたか判定
+        $origin = $request->input('origin');
+        if ($origin == 'profile') {
+            session(['users-id' => $user->id]);
+            return redirect()->route('profile.get');
+        } else {
+            return back();
+        }
     }
     // フォロー解除機能
-    public function unfollow(User $user)
+    public function unfollow(User $user, Request $request)
     {
         Follow::where('following_id', Auth::id())->where('followed_id', $user->id)->delete();
-        return back();
+        $origin = $request->input('origin');
+        if ($origin == 'profile') {
+            session(['users-id' => $user->id]);
+            return redirect()->route('profile.get');
+        } else {
+            return back();
+        }
     }
 }

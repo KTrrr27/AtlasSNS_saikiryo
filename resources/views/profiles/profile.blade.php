@@ -18,11 +18,13 @@
       <!-- routeでかく -->
       <form action="{{route('users/follow',$userData)}}" method="post">
         @csrf
+        <input type="hidden" name="origin" value="profile">
         <button type="submit" class="btn btn-primary follow">フォローする</button>
       </form>
       @else
       <form action="{{route('users/unfollow',$userData)}}" method="post">
         @csrf
+        <input type="hidden" name="origin" value="profile">
         <button type="submit" class="btn btn-danger Unfollow">フォロー解除</button>
       </form>
       @endif
