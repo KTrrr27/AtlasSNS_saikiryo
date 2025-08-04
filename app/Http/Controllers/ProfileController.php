@@ -46,4 +46,8 @@ class ProfileController extends Controller
             'posts' => $posts,
         ]);
     }
+    public function profiles()
+    {
+        return view('profiles.profiles');
+    }
 }

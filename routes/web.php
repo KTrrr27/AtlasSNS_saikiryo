@@ -63,4 +63,6 @@ Route::middleware('auth')->group(function () {
   // profile画面
   Route::post('profile', [ProfileController::class, 'profile'])->name('profile');
   Route::get('profile', [ProfileController::class, 'getProfile'])->name('profile.get');
+  // userProfile
+  Route::get('profiles', [ProfileController::class, 'profiles'])->name('profiles');
 });

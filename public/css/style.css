@@ -361,3 +361,61 @@ li p {
     margin-left: 15px;
     width: 15%;
 }
+
+/* usersProfile */
+.edit_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit_forms {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.edit {
+    margin: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.edit_content {
+    width: 60%;
+}
+
+.edit_content input {
+    background-color: #efefef;
+    border: #909090 solid 1px;
+}
+
+.edit_left {
+    width: 40%;
+}
+
+.edit_right {
+    width: 60%;
+}
+
+.edit_icon {
+    margin: 30px;
+}
+
+.edit_btn {
+    margin: 0 auto;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+.edit_file {
+    text-align: center;
+    width: 60%;
+    padding: 50px;
+    background-color: #efefef;
+    border: #909090 solid 1px;
+    cursor: pointer;
+}
