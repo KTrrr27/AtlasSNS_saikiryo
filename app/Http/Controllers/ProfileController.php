@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+use Illuminate\Support\Facades\Hash;
+
+
 use App\Models\User;
 use App\Models\Post;
 
@@ -49,5 +52,41 @@ class ProfileController extends Controller
     public function profiles()
     {
         return view('profiles.profiles');
+    }
+
+    // ユーザー情報の更新
+    public function ProfileUpdate(Request $request)
+    {
+        // 情報登録前にバリデーション
+        $request->validate([
+            'username' => ['required', 'min:2', 'max:12'],
+
+            'email' => ['required', 'min:5', 'max:40', 'unique:users,email', 'email'],
+
+            'password' => ['required', 'alpha_num', 'min:8', 'max:20', 'confirmed'],
+        ]);
+
+        // $user =Auth::user();
+        $username = $request->input('username');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $userMessage = $request->input('userMessage');
+
+        if ($request->hasFile('icon_image')) {
+            $image_name = $request->file('icon_image')->getClientOriginalName();
+            $icon_path = $request->file('icon_image')->storeAs('', $image_name, 'public');
+        } else {
+            $icon_path = Auth::user()->icon_image;
+        }
+
+        User::where('id', Auth::id())->update([
+            'username' => $username,
+            'email' => $email,
+            'password' => Hash::make($password),
+            'bio' => $userMessage,
+            'icon_image' => $icon_path,
+        ]);
+
+        return redirect()->route('top');
     }
 }

@@ -28,7 +28,9 @@
         'id'=>'password',
         'minlength'=>8,
         'maxlength'=>20,
-        'required']) }}
+        'required',
+        'pattern'=>'^[a-zA-Z0-9]+$',
+        'title'=>'英数字のみ使用できます']) }}
 
     {{ Form::label('パスワード確認') }}
     <!-- パスワードを伏字にするtext→password -->
@@ -37,7 +39,9 @@
         'id'=>'password_confirmation',
         'minlength'=>8,
         'maxlength'=>20,
-        'required']) }}
+        'required',
+        'pattern'=>'^[a-zA-Z0-9]+$',
+        'title'=>'英数字のみ使用できます']) }}
 
     {{ Form::submit('新規登録',
         ['class' =>'btn btn-danger',
