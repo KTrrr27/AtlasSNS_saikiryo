@@ -17,7 +17,7 @@
   @foreach ($posts as $post)
   <ul class="post_ul">
     <li class="post_left">
-      <img src="{{ asset('images/' .$post->user->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
+      <img src="{{ asset('storage/' .$post->user->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
       <div>
         <p>{{ $post->user->username }}</p>
         <!-- 改行 !! nl2br !! -->

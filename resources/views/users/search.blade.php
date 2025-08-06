@@ -19,7 +19,7 @@
     @continue($user->id==auth()->id())
     <ul class="search_li search_tr">
       <div class="search_li search_left">
-        <li><img src="{{ asset('images/' . $user->icon_image) }}" alt="ユーザーアイコン" class="user_icon"></li>
+        <li><img src="{{ asset('storage/' . $user->icon_image) }}" alt="ユーザーアイコン" class="user_icon"></li>
         <li>{{ $user->username }}</li>
       </div>
       <div class="search_li search_right">

@@ -34,7 +34,6 @@
             'id'=>'password',
             'minlength'=>8,
             'maxlength'=>20,
-            'required',
             'pattern'=>'^[a-zA-Z0-9]+$',
             'title'=>'英数字のみ使用できます']) }}
         </div>
@@ -44,19 +43,18 @@
             ['class' => 'edit_right',
             'id'=>'password_confirmation',
             'minlength'=>8,
-            'maxlength'=>20,
-            'required']) }}
+            'maxlength'=>20
+            ]) }}
         </div>
         <div class="edit">
           {{ Form::label('userMessage','自己紹介',['class'=>'edit_left'])}}
           {{ Form::text('userMessage',Auth::user()->bio,
             ['class'=>'edit_right',
             'id'=>'userMessage',
-            'maxlength'=>150,
-            'required']) }}
+            'maxlength'=>150]) }}
         </div>
         <div class="edit">
-          {{ Form::label('icon_image','アイコン画像',['class'=>'edit_left'])}}
+          {{ Form::label('','アイコン画像',['class'=>'edit_left'])}}
           <label for="icon_image" class="edit_file">ファイルを選択</label>
           {{ Form::file('icon_image',
             ['class'=>'edit_right',

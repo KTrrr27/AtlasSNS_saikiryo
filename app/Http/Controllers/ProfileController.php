@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 use App\Models\Post;
-
+use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
 {
@@ -61,17 +61,24 @@ class ProfileController extends Controller
         $request->validate([
             'username' => ['required', 'min:2', 'max:12'],
 
-            'email' => ['required', 'min:5', 'max:40', 'unique:users,email', 'email'],
+            'email' => [
+                'required',
+                'min:5',
+                'max:40',
+                'email',
+                // 認証済みidに含まれているものは除外
+                Rule::unique('users', 'email')->ignore(Auth::id())
+            ],
 
-            'password' => ['required', 'alpha_num', 'min:8', 'max:20', 'confirmed'],
+            'password' => ['nullable', 'alpha_num', 'min:8', 'max:20', 'confirmed'],
+
+            'icon_image' => ['file', 'image', 'mimes:jpg,png,bmp,gif,svg']
         ]);
 
         // $user =Auth::user();
         $username = $request->input('username');
         $email = $request->input('email');
-        $password = $request->input('password');
         $userMessage = $request->input('userMessage');
-
         if ($request->hasFile('icon_image')) {
             $image_name = $request->file('icon_image')->getClientOriginalName();
             $icon_path = $request->file('icon_image')->storeAs('', $image_name, 'public');
@@ -79,13 +86,23 @@ class ProfileController extends Controller
             $icon_path = Auth::user()->icon_image;
         }
 
-        User::where('id', Auth::id())->update([
-            'username' => $username,
-            'email' => $email,
-            'password' => Hash::make($password),
-            'bio' => $userMessage,
-            'icon_image' => $icon_path,
-        ]);
+        if ($request->input('password')) {
+            $password = Hash::make($request->input('password'));
+            User::where('id', Auth::id())->update([
+                'username' => $username,
+                'email' => $email,
+                'bio' => $userMessage,
+                'icon_image' => $icon_path,
+                'password' => $password
+            ]);
+        } else {
+            User::where('id', Auth::id())->update([
+                'username' => $username,
+                'email' => $email,
+                'bio' => $userMessage,
+                'icon_image' => $icon_path,
+            ]);
+        }
 
         return redirect()->route('top');
     }
