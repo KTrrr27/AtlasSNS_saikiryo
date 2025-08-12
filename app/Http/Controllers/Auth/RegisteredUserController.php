@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
             //alpha_num：英数字であるかどうか
             //confirmed：password_confirmationと一致の確認
             'password' => ['required', 'alpha_num', 'min:8', 'max:20', 'confirmed'],
-        ]);
+        ], ['email.unique' => 'メールアドレスは既に使用されています。']);
 
         User::create([
             'username' => $request->username,

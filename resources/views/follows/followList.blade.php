@@ -8,7 +8,7 @@
       <form action="{{route('profile')}}" method="post">
         @csrf
         <input type="hidden" class="users_id" name="users-id" value="{{$user->id}}">
-        <input type="image" src="{{ asset('storage/' . $user->icon_image) }}" alt="ユーザーアイコン" class="list_icon">
+        <input type="image" src="{{ asset($user->icon_image ==='icon1.png' ? 'images/'.$user->icon_image : 'storage/'.$user->icon_image) }}" alt="ユーザーアイコン" class="list_icon">
       </form>
       @endforeach
     </div>
@@ -20,7 +20,7 @@
       <form action="{{route('profile')}}" method="post">
         @csrf
         <input type="hidden" class="users_id" name="users-id" value="{{$user->id}}">
-        <input type="image" src="{{ asset('storage/' . $post->user->icon_image) }}" alt="ユーザーアイコン" class="list_icon">
+        <input type="image" src="{{ asset($post->user->icon_image ==='icon1.png' ? 'images/'.$post->user->icon_image : 'storage/'.$post->user->icon_image) }}" alt="ユーザーアイコン" class="list_icon">
       </form>
       <div>
         <p>{{ $post->user->username }}</p>

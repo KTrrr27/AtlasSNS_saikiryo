@@ -7,7 +7,7 @@
     'class'=>'edit_form',
     'enctype'=>'multipart/form-data'])!!}
     <div class="edit_forms">
-      <img src="{{ asset('storage/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user_icon edit_icon">
+      <img src="{{ asset(Auth::user()->icon_image ==='icon1.png' ? 'images/'.Auth::user()->icon_image : 'storage/'.Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
       <div class="edit_content">
         <div class="edit">
           {{ Form::label('username','ユーザー名',['class'=>'edit_left'])}}

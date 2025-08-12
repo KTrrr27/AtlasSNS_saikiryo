@@ -125,19 +125,18 @@ body {
 
 #menuContent a {
     text-decoration: none;
-    color: #909090;
     border: solid #00297e 1px;
     display: block;
     padding: 30px 0;
 }
 
-.menuContent_li {
-    color: #fff;
-    background-color: #00297e;
+.menuContent_li a {
+    color: #909090;
 }
 
-#menuContent_li a {
+.menuContent_li a:hover {
     color: #eff1f7;
+    background-color: #00297e;
 }
 
 #accordionMenu {

@@ -13,15 +13,15 @@
                     </p>
                 </div>
                 <ul id="menuContent" class="collapse">
-                    <li><a href="{{ route('top') }}">ホーム</a></li>
+                    <li class="menuContent_li"><a href="{{ route('top') }}">ホーム</a></li>
                     <li class="menuContent_li"><a href="{{ route('profiles') }}">プロフィール編集</a></li>
-                    <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
+                    <li class="menuContent_li"><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
                         <!-- ログアウトボタンを押したら見えないformにPOSTで送信されて、ルート名logoutをさがす -->
                         <form id="logout-form" action="{{route ('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                     </li>
                 </ul>
-                <img src="{{ asset('storage/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
+                <img src="{{ asset(Auth::user()->icon_image ==='icon1.png' ? 'images/'.Auth::user()->icon_image : 'storage/'.Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
             </div>
         </div>

@@ -1,7 +1,9 @@
 <x-login-layout>
 
   <div class="post_area area">
-    <img src="{{ asset('storage/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
+    <!-- 写真を条件で表示 -->
+    <!-- 条件 ? true : false -->
+    <img src="{{ asset(Auth::user()->icon_image ==='icon1.png' ? 'images/'.Auth::user()->icon_image : 'storage/'.Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
     {{ Form::open(['url' => '/post', 'method'=>'post', 'class' =>'post_form']) }}
     {{ Form::textarea('post',null,[
       'required',
@@ -17,7 +19,8 @@
   @foreach ($posts as $post)
   <ul class="post_ul">
     <li class="post_left">
-      <img src="{{ asset('storage/' .$post->user->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
+      <img src="{{ asset($post->user->icon_image ==='icon1.png' ? 'images/'.$post->user->icon_image : 'storage/'.$post->user->icon_image) }}" alt="ユーザーアイコン" class="user_icon">
+
       <div>
         <p>{{ $post->user->username }}</p>
         <!-- 改行 !! nl2br !! -->

@@ -14,6 +14,9 @@
         'required']) }}
 
     {{ Form::label('メールアドレス') }}
+    @error('email')
+    <p><span id="error">{{$message}}</span></p>
+    @enderror
     {{ Form::email('email',null,
         ['class' => 'input',
         'id'=>'email',
