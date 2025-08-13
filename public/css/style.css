@@ -171,7 +171,7 @@ body {
     display: flex;
     align-items: center;
     height: 50px;
-    font-size: 30px;
+    font-size: 24px;
     width: 50%;
 }
 
@@ -308,6 +308,10 @@ li p {
 
 .search_right {
     position: relative;
+}
+
+.search_left {
+    width: 30%;
 }
 
 .follow,
