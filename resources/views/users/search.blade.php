@@ -7,8 +7,10 @@
 
     </form>
     <div class="search_text">
+      @if (!empty($keyword))
       <!-- 検索keyword表示 または⁇ ''空 -->
       <p>検索ワード：{{ $keyword ?? ''}}</p>
+      @endif
     </div>
   </div>
 
